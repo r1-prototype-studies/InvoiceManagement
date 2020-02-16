@@ -6,3 +6,4 @@
 /src/InvoiceManagementApp/InvoiceManagement.Application/obj
 /src/InvoiceManagementApp/InvoiceManagement.Domain/obj
 /src/InvoiceManagementApp/InvoiceManagement.Infrastructure/obj
+/src/InvoiceManagementApp/InvoiceManagement.Infrastructure/bin/Debug/netcoreapp3.1
