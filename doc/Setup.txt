@@ -21,6 +21,9 @@ add-migration InitialMigration
 update-database
 add-migration AddInvoice
 
+Credentials
+test@test.com/Testing@1
+
 
 
 References:-
