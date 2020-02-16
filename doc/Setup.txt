@@ -1,3 +1,15 @@
+Project layers
+1. Domain --> .Net core standard library
+2. Application --> .Net core standard library. Depends on Domain.
+3. Presentation(Api) --> .Net core web Project. Depends on Application.
+4. Infrastructure --> .Net core class library. Depends on Application.
+
+Install the below nugets in Infrastructure:
+Microsoft.AspNetCore.ApiAuthorization.IdentityServer
+Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore
+Microsoft.AspNetCore.Identity.EntityFrameworkCore
+Microsoft.EntityFrameworkCore.SqlServer
+Microsoft.EntityFrameworkCore.Tools
 
 
 

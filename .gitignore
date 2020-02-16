@@ -3,3 +3,6 @@
 ################################################################################
 
 /src/InvoiceManagementApp/.vs/InvoiceManagementApp/v16
+/src/InvoiceManagementApp/InvoiceManagement.Application/obj
+/src/InvoiceManagementApp/InvoiceManagement.Domain/obj
+/src/InvoiceManagementApp/InvoiceManagement.Infrastructure/obj
