@@ -14,6 +14,7 @@ Microsoft.EntityFrameworkCore.Tools
 Nuget commands
 add-migration InitialMigration
 update-database
+add-migration AddInvoice
 
 
 
