@@ -28,8 +28,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\InvoiceManagement.Application\InvoiceManagement.Application.csproj" />
-    <ProjectReference Include="..\InvoiceManagement.Infrastructure\InvoiceManagement.Infrastructure.csproj" />
+    <ProjectReference Include="..\InvoiceManagement.Application\InvoiceManagementApp.Application.csproj" />
+    <ProjectReference Include="..\InvoiceManagement.Infrastructure\InvoiceManagementApp.Infrastructure.csproj" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

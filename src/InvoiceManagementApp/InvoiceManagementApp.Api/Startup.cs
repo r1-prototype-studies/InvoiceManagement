@@ -12,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using InvoiceManagement.Infrastructure;
 using InvoiceManagement.Application.Common.Interfaces;
 using InvoiceManagementApp.Api.Services;
+using InvoiceManagement.Application;
 
 namespace InvoiceManagementApp.Api
 {
@@ -27,8 +28,9 @@ namespace InvoiceManagementApp.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<ICurrentUserService, CurrentUserService>();
+            services.AddApplication();
             services.AddInfrastructure(Configuration);
+            services.AddScoped<ICurrentUserService, CurrentUserService>();
 
             services.AddControllersWithViews();
             services.AddRazorPages();

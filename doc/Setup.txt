@@ -11,6 +11,11 @@ Microsoft.AspNetCore.Identity.EntityFrameworkCore
 Microsoft.EntityFrameworkCore.SqlServer
 Microsoft.EntityFrameworkCore.Tools
 
+Install the below nugets in Application
+FluentValidation
+FluentValidation.DependencyInjectionExtensions
+MediatR.Extensions.Microsoft.DependencyInjection
+
 Nuget commands
 add-migration InitialMigration
 update-database
