@@ -13,6 +13,8 @@ using InvoiceManagement.Infrastructure;
 using InvoiceManagement.Application.Common.Interfaces;
 using InvoiceManagementApp.Api.Services;
 using InvoiceManagement.Application;
+using NSwag.Generation.Processors.Security;
+using System.Linq;
 
 namespace InvoiceManagementApp.Api
 {
@@ -35,6 +37,19 @@ namespace InvoiceManagementApp.Api
             services.AddControllersWithViews();
             services.AddRazorPages();
 
+            services.AddOpenApiDocument(configure =>
+            {
+                configure.Title = "InvoiceManagementApp API";
+                configure.AddSecurity("JWT", Enumerable.Empty<string>(), new NSwag.OpenApiSecurityScheme
+                {
+                    Type = NSwag.OpenApiSecuritySchemeType.ApiKey,
+                    Name = "Authorization",
+                    In = NSwag.OpenApiSecurityApiKeyLocation.Header,
+                    Description = "Type into the textbox: Bearer {your JWT token}."
+                });
+                configure.OperationProcessors.Add(new AspNetCoreOperationSecurityScopeProcessor("JWT"));
+            });
+
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
@@ -49,6 +64,8 @@ namespace InvoiceManagementApp.Api
             {
                 app.UseDeveloperExceptionPage();
                 app.UseDatabaseErrorPage();
+                app.UseOpenApi();
+                app.UseSwaggerUi3();
             }
             else
             {

@@ -28,5 +28,23 @@ Automapper:
 AutoMapper
 AutoMapper.Extensions.Microsoft.DependencyInjection
 
+Swagger:
+NSwag.AspNetCore
+NSwag.Build
+
+Swagger url:
+https://localhost:44365/swagger
+https://localhost:44365/swagger/v1/swagger.json
+
+Download https://github.com/RicoSuter/NSwag/wiki/NSwagStudio
+
+Add the below in api.csproj
+<Target Name="NSwag" AfterTargets="Build">
+    <Copy SourceFiles="@(ReferencePath)" DestinationFolder="$(OutDir)References" />
+    <Exec Command="$(NSwagExe_Core31) run nswag.json /variables:Configuration=$(Configuration),OutDir=$(OutDir)" />
+    <RemoveDir Directories="$(OutDir)References" />
+  </Target>
+
+
 References:-
 https://alexcodetuts.com/2020/02/05/asp-net-core-3-1-clean-architecture-invoice-management-app-part-1/
